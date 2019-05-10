@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <br />
+
+        
+             
+        
+        
+        <p:imageCompare leftImage="/resources/img/lara-ps3.png"
+                rightImage="/resources/img/lara-ps4.png"
+                width="450" height="435"/>
+        <h:form>
+            <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+            <p:inputText value="#{altaCategoriaController.categoria.nombreCategoria}"/>
+            <p:commandButton value="Registrar categoría" actionListener="#{altaCategoriaController.crearCategoria()}"></p:commandButton>
+            <h:outputLabel for="descripcionRol" value="Introduce la descripcion del Rol"/>
+            <p:inputText id="descripcionRol" value="#{altaCategoriaController.rol.descripcionRol}"/>
+            <h:outputLabel for="tipoUsuario" value="Introduce la letra del Rol"/>
+            <p:inputText id="tipoUsuario" value="#{altaCategoriaController.rol.tipoUsuarioRol}"/>
+            <p:commandButton value="Registrar Rol" actionListener="#{altaCategoriaController.crearRol()}"></p:commandButton>
+        </h:form>
+        <p:dock position="bottom">
+            <p:menuitem value="Home" icon="/resources/img/home.png" url="http://intagram.com/marcogg97"/>
+            <p:menuitem value="Music" icon="/resources/img/music.png" url="#"/>
+            <p:menuitem value="Video" icon="/resources/img/video.png" url="#"/>
+            <p:menuitem value="Email" icon="/resources/img/email.png" url="#"/>
+            <p:menuitem value="Portfolio" icon="/resources/img/portfolio.png" url="#"/>
+            <p:menuitem value="Link" icon="/resources/img/link.png" url="#"/>
+            <p:menuitem value="RSS" icon="/resources/img/rss.png" url="#"/>
+            <p:menuitem value="History" icon="/resources/img/history.png" url="#"/>
+        </p:dock>
+        </h:body>
+</html>
+

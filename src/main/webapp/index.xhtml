@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>TITULO A PONER</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="index.css"/>
+    </h:head>
+    <h:body>
+        
+        <div id="cuadrado">
+        <h:form>
+            
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Usuario"/>
+                <p:inputText value="#{indexController.usuario.userUsuario}"/>
+                
+                <p:outputLabel value="Contraseña"/>
+                <p:inputText value="#{indexController.usuario.passwordUsuario}"/>
+                
+                <p:column/>
+                <p:commandButton value="Acceder" action="#{indexController.comprobarUsuario()}"/>
+                
+                
+            </p:panelGrid>
+            <p>
+                <h:link outcome="/privado/administrador/altacategoria" value="ALTA DE CATEGORIA"/>
+            </p>
+
+            <p>
+                <h:link outcome="/privado/administrador/altausuarios" value="ALTA DE USUARIOS"/>
+            </p>
+            <p>
+                <h:link outcome="/privado/administrador/altapublicaciones" value="ALTA DE PUBLICACIONES"/>
+            </p>
+        </h:form>
+        </div>
+    </h:body>
+</html>

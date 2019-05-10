@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../../WEB-INF/Templates/plantillaPADRE.xhtml">
+
+            <ui:define name="content">
+                
+                <h:form>
+
+                    <p:dataTable var="publicacion" value="#{publicacionesController.listaPublicaciones}">
+                        <p:column headerText="Titulo">
+                            <h:outputText value="#{publicacion.tituloPublicacion}" />
+                        </p:column>
+
+                        <p:column headerText="Nombre">
+                            <h:outputText value="#{publicacion.persona.nombrePersona}" />
+                        </p:column>
+
+                        <p:column headerText="Apellidos">
+                            <h:outputText value="#{publicacion.persona.apellido1Persona} #{publicacion.persona.apellido2Persona}" />
+                        </p:column>
+
+                        <p:column headerText="Valorar">
+                            <p:commandButton value="Valorar" />
+                        </p:column>
+                    </p:dataTable>
+                    
+                </h:form>
+                
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
